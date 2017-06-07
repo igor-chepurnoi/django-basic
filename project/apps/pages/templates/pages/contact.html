@@ -1,0 +1,22 @@
+{% extends 'layouts/main.html' %}
+
+{% load bootstrap3 %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Contact" %}
+{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Contact" %}</h1>
+    <p>{% trans "If you have business inquiries or other questions, please fill out the following form to contact us. Thank you." %}</p>
+    <div class="row">
+        <div class="col-lg-6">
+            <form role="form" method="post">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                {% bootstrap_button 'Submit' button_type='submit' button_class="btn-primary" %}
+            </form>
+        </div>
+    </div>
+{% endblock %}

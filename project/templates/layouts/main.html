@@ -1,0 +1,74 @@
+{% extends 'bootstrap3/bootstrap3.html' %}
+
+{% block bootstrap3_title %}{% block title %}{% endblock %}{% endblock %}
+
+{% load static %}
+{% load bootstrap3 %}
+{% load base_extras %}
+{% load i18n %}
+
+{% block bootstrap3_extra_head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+{% endblock %}
+{% block bootstrap3_content %}
+    <div class="wrap">
+        <nav id="w1" class="navbar-inverse navbar-fixed-top navbar" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{% url 'index' %}">{% trans "Django Basic Template" %}</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav navbar-right nav">
+                        <li class="{% active_page request "index" %}">
+                            <a href="{% url 'index' %}">{% trans "Home" %}</a>
+                        </li>
+                        <li class="{% active_page request "cms.article" slug='about-us' %}">
+                            <a href="{% url 'cms.article' slug='about-us' %}">{% trans "About Us" %}</a>
+                        </li>
+                        <li class="{% active_page request "contact" %}">
+                            <a href="{% url 'contact' %}">{% trans "Contact" %}</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                            <li class="{% active_page request "account" %}">
+                                <a href="{% url 'account' %}">{% trans "My Account" %}</a>
+                            </li>
+                            {% if user.is_staff %}
+                                <li>
+                                    <a href="{% url 'admin:index' %}">{% trans "Administration" %}</a>
+                                </li>
+                            {% endif %}
+                            <li>
+                                <a href="{% url 'logout' %}">{% trans "Logout" %} ({{ user.username }})</a>
+                            </li>
+                        {% else %}
+                            <li class="{% active_page request "signup" %}">
+                                <a href="{% url 'signup' %}">{% trans "Sign up" %}</a>
+                            </li>
+                            <li class="{% active_page request "login" %}">
+                                <a href="{% url 'login' %}">{% trans "Sign in" %}</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            {% bootstrap_messages %}
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="pull-left">© Django Basic Template {% now "Y" %}</p>
+            <ul>
+                <li>
+                    <a href="{% url 'cms.article' slug='terms-and-conditions' %}">{% trans "Terms & Conditions" %}</a>
+                </li>
+                <li>
+                    <a href="{% url 'cms.article' slug='privacy-policy' %}">{% trans "Privacy Policy" %}</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+{% endblock %}

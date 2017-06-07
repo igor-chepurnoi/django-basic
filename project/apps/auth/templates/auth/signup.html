@@ -1,0 +1,22 @@
+{% extends 'layouts/main.html' %}
+
+{% load bootstrap3 %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Signup" %}
+{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Signup" %}</h1>
+    <p>{% trans "Please fill out the following fields to signup:" %}</p>
+    <div class="row">
+        <div class="col-lg-6">
+            <form role="form" method="post">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                {% bootstrap_button 'Create an account' button_type='submit' button_class="btn-primary" %}
+            </form>
+        </div>
+    </div>
+{% endblock %}

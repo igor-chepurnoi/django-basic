@@ -1,0 +1,35 @@
+[
+  {
+    "model": "cms.article",
+    "pk": 1,
+    "fields": {
+      "title": "About US",
+      "slug": "about-us",
+      "content": "About us content",
+      "meta_title": "About Us",
+      "status": 1
+    }
+  },
+  {
+    "model": "cms.article",
+    "pk": 2,
+    "fields": {
+      "title": "Terms & Conditions",
+      "slug": "terms-and-conditions",
+      "content": "Terms & Conditions Content",
+      "meta_title": "Terms & Conditions",
+      "status": 1
+    }
+  },
+  {
+    "model": "cms.article",
+    "pk": 3,
+    "fields": {
+      "title": "Privacy Policy",
+      "slug": "privacy-policy",
+      "content": "Privacy Policy Content",
+      "meta_title": "Privacy Policy",
+      "status": 1
+    }
+  }
+]

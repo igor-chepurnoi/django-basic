@@ -1,0 +1,52 @@
+{% extends 'layouts/main.html' %}
+
+{% load bootstrap3 %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "My Account" %}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {% trans "Change Password" %}
+                </div>
+                <div class="panel-body">
+                    <form role="form" method="post">
+                        {% csrf_token %}
+                        {% bootstrap_form form %}
+                        {% bootstrap_button 'Save' button_type='submit' button_class="btn-primary" %}
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading no-bottom-border">
+                    {% trans "Personal Information" %}
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered detail-view">
+                        <tbody>
+                        <tr>
+                            <th>{% trans "Username" %}</th>
+                            <td>{{ user.username }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans "Email" %}</th>
+                            <td>{{ user.email }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans "Last Login" %}</th>
+                            <td>{{ user.last_login }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
