@@ -1,11 +1,5 @@
-Basic Django Application
+Backend Application
 ================================
-
-## FEATURES
-- Sign in, Sign up, Forgot Password
-- User management
-- Account page
-
 
 Installing using Docker
 -----------------------
