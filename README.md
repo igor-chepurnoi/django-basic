@@ -29,7 +29,7 @@ python manage.py createsuperuser
 python manage.py loaddata project/apps/*/fixtures/*.json
 ```
 
-After this steps, you need to create `security.py` file in the `project/settings/local`directory with the following content:
+After this steps, you need to create `security.py` file in the `project/settings/local` directory with the following content:
 
 ```python
 ALLOWED_HOSTS = ['0.0.0.0']
@@ -37,7 +37,7 @@ ALLOWED_HOSTS = ['0.0.0.0']
 
 After this steps, you can access your app from [http://0.0.0.0:8000/](http://0.0.0.0:8000/).
 
-> For enable debug toolbar you need to create `debug_toolbar.py` file in the `project/settings/local`directory with the following content:
+> For enable debug toolbar you need to create `debug_toolbar.py` file in the `project/settings/local` directory with the following content:
 
 ```python
 INTERNAL_IPS = ['172.24.0.1', ]
