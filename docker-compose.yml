@@ -2,7 +2,7 @@ version: '2'
 
 services:
   db:
-      container_name: clewo-db-container
+      container_name: django-basic-db-container
       build:
           context: ./docker/development/db
           args:
@@ -25,7 +25,7 @@ services:
           - ./:/code/
 
   web:
-      container_name: clewo-web-container
+      container_name: django-basic-web-container
       extends:
           service: manage
       command: runserver 0.0.0.0:8000

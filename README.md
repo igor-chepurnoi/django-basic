@@ -1,5 +1,18 @@
-Backend Application
+Django 1.11+ basic project
 ================================
+
+This is a simple Django 1.11+ basic project with my preferred setup.
+
+## Features
+
+- Django 1.11
+- Support Docker (only development container)
+- Get value insight and debug information while on Development with [django-debug-toolbar](https://django-debug-toolbar.readthedocs.org).
+- Collection of custom extensions with [django-extensions](http://django-extensions.readthedocs.org).
+- PostgreSQL database support with psycopg2.
+- Integrated `django-rest-framework`
+- Sign in, Sign up, Account Page
+
 
 Installing using Docker
 -----------------------
@@ -10,8 +23,8 @@ Installing using Docker
 You can install the application using the following commands:
 
 ```sh
-git clone https://bitbucket.org/clewo/backend-app.git
-cd backend-app
+git clone https://github.com/igor-chepurnoi/django-basic.git
+cd django-basic
 cp .env{.dist,}
 cp docker-compose.override.yml{.dist,}
 docker-compose up -d --build
@@ -23,7 +36,7 @@ It may take some minutes to download the required docker images. When
 done, you need to apply migrations as follows:
 
 ```sh
-docker exec -it clewo-web-container bash
+docker exec -it django-basic-web-container bash
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py loaddata project/apps/*/fixtures/*.json
