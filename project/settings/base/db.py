@@ -4,8 +4,8 @@
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django_blog',
-        'USER': 'django_blog',
+        'NAME': 'django_project',
+        'USER': 'docker',
         'PASSWORD': 'secret',
         'HOST': 'db',
         'PORT': 5432,

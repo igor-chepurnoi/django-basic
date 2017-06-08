@@ -11,5 +11,5 @@ urlpatterns = [
         },
         name='login'),
     url(r'^signup/$', main_views.signup, name='signup'),
-    url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
+    url(r'^logout/$', auth_views.logout, {'next_page': 'home'}, name='logout'),
 ]

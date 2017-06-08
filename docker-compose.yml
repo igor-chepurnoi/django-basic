@@ -11,8 +11,8 @@ services:
           - ./docker/volumes/db:/var/lib/postgresql/data
       environment:
           POSTGRES_PASSWORD: secret
-          POSTGRES_USER: django_blog
-          POSTGRES_DB: django_blog
+          POSTGRES_USER: docker
+          POSTGRES_DB: django_project
           PGDATA: /var/lib/postgresql/data/pgdata
       restart: always
 

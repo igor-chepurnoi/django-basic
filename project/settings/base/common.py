@@ -54,7 +54,7 @@ REST_FRAMEWORK = {
 ROOT_URLCONF = 'project.urls'
 
 # URL Django will redirect the user after a successful authentication.
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'home'
 
 TEMPLATES = [
     {
