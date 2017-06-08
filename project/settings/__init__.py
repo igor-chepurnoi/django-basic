@@ -10,6 +10,7 @@ include(
     'base/security.py',
     'base/middleware.py',
     'base/debug_toolbar.py',
+    'base/emails.py',
 
     # we can load any other settings from local folder
     optional('local/*.py'),

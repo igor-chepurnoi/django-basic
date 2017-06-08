@@ -10,7 +10,7 @@ This is a simple Django 1.11+ basic project with my preferred setup.
 - Get value insight and debug information while on Development with [django-debug-toolbar](https://django-debug-toolbar.readthedocs.org).
 - Collection of custom extensions with [django-extensions](http://django-extensions.readthedocs.org).
 - PostgreSQL database support with psycopg2.
-- Integrated `django-rest-framework`
+- Integrated with `django-rest-framework`
 - Sign in, Sign up, Account Page
 
 
@@ -27,7 +27,7 @@ git clone https://github.com/igor-chepurnoi/django-basic.git
 cd django-basic
 cp .env{.dist,}
 cp docker-compose.override.yml{.dist,}
-docker-compose up -d --build
+docker-compose up --build
 ```
 > In `.env` file your need to set your UID.
 > You can get your UID by the following command in the terminal: `id -u <username>`
@@ -54,5 +54,5 @@ After this steps, you can access your app from [http://0.0.0.0:8000/](http://0.0
 
 ```python
 INTERNAL_IPS = ['172.24.0.1', ]
-# This is a Gateway address of clewo-web-container, you can check it by the following command - docker inspect clewo-web-container
+# This is a Gateway address of clewo-web-container, you can check it by the following command - docker inspect django-basic-web-container
 ```
