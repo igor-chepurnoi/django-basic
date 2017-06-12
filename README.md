@@ -54,5 +54,5 @@ After this steps, you can access your app from [http://0.0.0.0:8000/](http://0.0
 
 ```python
 INTERNAL_IPS = ['172.24.0.1', ]
-# This is a Gateway address of clewo-web-container, you can check it by the following command - docker inspect django-basic-web-container
+# This is a Gateway address of django-basic-web-container, you can check it by the following command - docker inspect django-basic-web-container
 ```
